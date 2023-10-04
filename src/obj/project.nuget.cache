@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ULum5fIyhr3sRlwBhtoQKXRlkC8sNxGYvPX/+SzH+RuuBAy22tMNl5WHLjmSffWF5ipaUwADE7RAOTkeYKi64A==",
+  "dgSpecHash": "UmWZnAqOp6lgJz6C2BYznIjWQdTDhGk6DPsLmabj0gPELvPujCopVOxCBMOHJkZwM9W4v3wxI/uOEaa7iEy88g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\wwwwx\\source\\C#\\PetProject\\src\\src.csproj",
+  "projectFilePath": "c:\\Users\\wwwwx\\source\\C#\\PetProject\\src\\src.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\wwwwx\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\wwwwx\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

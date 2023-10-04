@@ -105,7 +105,7 @@ namespace src.Controllers
             db.Users.Add(user);
             await db.SaveChangesAsync();
 
-            SendRegtstrationEmailAsync(user.Email, user.Username);
+            // SendRegtstrationEmailAsync(user.Email, user.Username);
 
             return Ok();
         }
@@ -131,7 +131,7 @@ namespace src.Controllers
             db.Users.Update(user);
             await db.SaveChangesAsync();
 
-            SendNewPasswordAsync(user.Email, user.Username, password);
+            // SendNewPasswordAsync(user.Email, user.Username, password);
 
             return Ok();
         }

@@ -11,6 +11,6 @@ document.getElementById("form").addEventListener("submit", async (event) => {
         window.location.replace("/");
     }
     else {
-        alert("qwe");
+        alert("Error");
     }
 });

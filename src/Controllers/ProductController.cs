@@ -15,6 +15,24 @@ namespace src.Controllers
             this.db = db;
         }
 
+        [HttpDelete]
+        [Route("/product/{id}")]
+        public IActionResult DeleteWithId(int id)
+        {
+
+            Product? product = db.Products.FirstOrDefault(p => p.Id == id);
+            if (product is null)
+                return BadRequest();
+
+            if (product.Image is not null)
+                DeleteOldProductImage(product.Image);
+
+            db.Products.Remove(product);
+            db.SaveChanges();
+
+            return Ok();
+        }
+
         [HttpGet]
         [Route("/product/{id}")]
         public IActionResult Index(int id)
@@ -49,21 +67,6 @@ namespace src.Controllers
                 IsAuthor = userId == user.Id
             };
             return View(model);
-        }
-
-        [HttpDelete]
-        [Route("/product/{id}")]
-        public IActionResult DeleteWithId(int id)
-        {
-
-            Product? product = db.Products.FirstOrDefault(p => p.Id == id);
-            if (product is null)
-                return BadRequest();
-
-            db.Products.Remove(product);
-            db.SaveChanges();
-
-            return Ok();
         }
 
         [HttpGet]
@@ -123,24 +126,17 @@ namespace src.Controllers
             return Ok();
         }
 
-        int GetUserId()
+        static void DeleteOldProductImage(string image)
         {
-            if (User.Claims.Any(c => c.Type == "Id"))
+            Console.WriteLine("start");
+            string filename = image[17..];
+            string path = Path.Combine("Static/Images/Products/", filename);
+            if (System.IO.File.Exists(path))
             {
-                var claim = User.FindFirst("Id");
-                if (claim is not null)
-                    return int.Parse(claim.Value);
+                Console.WriteLine("exists");
+                System.IO.File.Delete(path);
             }
-            return -1;
+            Console.WriteLine("done");
         }
-
-        // [Route("/xdd")]
-        // public IActionResult Xdd()
-        // {
-        //     db.Products.Where(p => p.Type == "#sort")
-        //     db.SaveChanges();
-
-        //     return Content("Xdd");
-        // }
     }
 }

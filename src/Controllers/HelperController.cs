@@ -28,5 +28,37 @@ namespace src.Controllers
             bool isEmailTaken = db.Users.Any(u => u.Email == email);
             return Json(!isEmailTaken);
         }
+
+        [Route("/xdd")]
+        public IActionResult Xdd()
+        {
+            int id = GetUserId();
+            for (int i = 0; i <= 30; i++)
+            {
+                db.Products.Add(new Models.Product
+                {
+                    Title = $"Product {i + 1}",
+                    Description = $"Product {i + 1} description",
+                    Type = "service",
+                    Price = i * 2 + 10,
+                    Image = "/Images/Products/Default.png",
+                    AuthorId = id
+                });
+            }
+
+            db.SaveChanges();
+            return Content("Done");
+            
+        }
+        private int GetUserId()
+        {
+            if (User.Claims.Any(c => c.Type == "Id"))
+            {
+                var claim = User.FindFirst("Id");
+                if (claim is not null)
+                    return int.Parse(claim.Value);
+            }
+            return -1;
+        }
     }
 }
