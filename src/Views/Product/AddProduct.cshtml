@@ -1,0 +1,114 @@
+@model AddProduct
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href='https://fonts.googleapis.com/css?family=Varela Round' rel='stylesheet'>
+    <link rel="stylesheet" href="../default.css">
+    <link rel="stylesheet" href="../razorAddproduct/main.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="title">
+            <a href="/">
+                <img src="../Images/logo.svg" alt="logo" style="width: 130px;">
+            </a>
+        </div>
+
+        <div class="headercontent">
+
+            <div class="navigation" data-navigation>
+                <a href="/addproduct">
+                    <button class="nav-button">
+                        <span class="buttontext">
+                            Add product
+                        </span>
+                    </button>
+                </a>
+
+                <!-- <a href="/addproduct">
+                    <button class="nav-button">
+                        <span class="buttontext">
+                            Registartion
+                        </span>
+                    </button>
+                </a> -->
+            </div>
+
+        </div>
+    </header>
+
+    <div class="container">
+
+        <div class="content">
+            <form id="">
+                <p>
+                    <label for="Title">Title:</label> <br>
+                    <input type="text" id="Title" name="Title" required /><br />
+                    <span asp-validation-for="Title" />
+                </p>
+
+                <p>
+                    <label for="Description">Description:</label> <br>
+                    <textarea id="Description" name="Description" required></textarea><br />
+                    <span asp-validation-for="Description" />
+                </p>
+
+                <p>
+                    <label for="Type">Type:</label> <br>
+                    <select id="Type" name="Type" required>
+                        <option value="service">Services</option>
+                        <option value="tech">Computers, Smartphones</option>
+                        <option value="music">Music</option>
+                        <option value="garden">Home and Garden</option>
+                        <option value="house">Household appliances</option>
+                        <option value="guns">Guns, Hunting and fishing</option>
+                        <option value="cosmetic">Beauty and fashion</option>
+                        <option value="baby">Baby products</option>
+                        <option value="sport">Sports, tourism, recreation</option>
+                        <option value="animals">Animals</option>
+                        <option value="building">Repair and construction</option>
+                    </select><br />
+                </p>
+
+                <p>
+                    <label for="Price">Price:</label> <br>
+                    <input type="number" id="Price" name="Price" step="0.01" /><br />
+                    <span asp-validation-for="Price" />
+                </p>
+
+                <p>
+                    <label for="Image">Image</label><br>
+                    <input class="img" type="file" id="Image" name="Image" /><br />
+                    <span asp-validation-for="Image" />
+                </p>
+
+                <input class="submit-button" type="submit" value="Submit" />
+            </form>
+            <a href="/">Cancel</a>
+        </div>
+
+    </div>
+
+    <footer>
+        <span class="footertext">
+            Copyright© All rights reserved
+        </span>
+    </footer>
+
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.1.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.17.0/jquery.validate.min.js"></script>
+    <script
+        src="https://ajax.aspnetcdn.com/ajax/jquery.validation.unobtrusive/3.2.10/jquery.validate.unobtrusive.min.js"></script>
+
+    <script src="../default.js"></script>
+    <script src="../razorAddproduct/main.js"></script>
+</body>
+
+</html>

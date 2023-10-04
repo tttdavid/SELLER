@@ -1,0 +1,120 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.user {
+    flex: 1;
+}
+
+.author {
+    padding: 10px;
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 0px 0px 10px 0px;
+    border: 1px solid rgba(151, 150, 150, 0.267);
+}
+
+.author-avatar {
+    height: 200px;
+    width: 200px;
+    margin-bottom: 20px;
+    border-radius: 50%;
+}
+
+.author-name {
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+.content {
+    flex: 4;
+    background-color: var(--white);
+    margin-left: 30px;
+    background-color: whitesmoke;
+}
+
+.products {
+    padding: 20px;
+    background-color: var(--white);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.product {
+    width: calc(25% - 50px);
+    box-sizing: border-box;
+    margin-bottom: 50px;
+    border: 1px solid rgb(221, 219, 219);
+    border-radius: 5px;
+
+    padding-top: 15px;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.product-image-div {
+    width: 230px;
+    height: 230px;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product:hover {
+    background-color: #e6e5e5;
+    -webkit-transition: background 200ms;
+    transition: background 200ms;
+}
+
+.product-image {
+    border-radius: 5px;
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+}
+
+.product-price {
+    margin-bottom: 10px;
+}
+
+.pagination {
+    display: flex;
+    padding: 10px;
+    background-color: whitesmoke;
+    justify-content: center;
+}
+
+.pagination-button {
+    border: none;
+    background-color: var(--white);
+    font-family: var(--font);
+    font-size: 20px;
+    border-radius: 5px;
+    width: 40px;
+    margin: 0 10px;
+    padding: 5px 0px;
+}
+
+.pagination-button:hover {
+    background-color: #e6e5e5;
+    -webkit-transition: background 200ms;
+    transition: background 200ms;
+}
+
+.active {
+    background-color: #e6e5e5;
+}

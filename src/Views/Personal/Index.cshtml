@@ -1,0 +1,147 @@
+@model UserView
+
+@{
+    UserView user = Model;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href='https://fonts.googleapis.com/css?family=Varela Round' rel='stylesheet'>
+    <link rel="stylesheet" href="../default.css">
+    <link rel="stylesheet" href="../razorPersonal/main.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="title">
+            <a href="/">
+                <img src="../Images/logo.svg" alt="logo" style="width: 130px;">
+            </a>
+        </div>
+
+        <div class="headercontent">
+
+            <div class="navigation" data-navigation>
+                <a href="/addproduct">
+                    <button class="nav-button">
+                        <span class="buttontext">
+                            Add product
+                        </span>
+                    </button>
+                </a>
+
+                <!-- <a href="/addproduct">
+                    <button class="nav-button">
+                        <span class="buttontext">
+                            Registartion
+                        </span>
+                    </button>
+                </a> -->
+            </div>
+
+        </div>
+    </header>
+
+    <div class="container">
+
+        <div class="content">
+
+            <div class="avatar">
+                <div id="imagebox" class="imagebox">
+                    <img src="../@user.Avatar" class="author-avatar" alt="author profile picture">
+                </div>
+
+                <form id="avatarform" class="form hidden">
+                    <input name="file" type="file">
+                    <input class="editbutton" type="submit" value="upload">
+                </form>
+
+                <button id="editavatar" class="editbutton">Edit</button>
+            </div>
+
+            <div class="userinfo">
+                <div>
+                    <span id="usernamespan">
+                        Username:
+                        <span id="username">
+                            @user.Username
+                        </span>
+                    </span>
+
+                    <form id="usernameform" class="form hidden">
+                        <input id="usernameinput" name="username" type="text" required>
+                        <input class="editbutton" type="submit" value="Save">
+                    </form>
+
+                    <button id="editusername" class="editbutton">Edit</button>
+                </div>
+
+                <div>
+                    <span id="phonespan">
+                        Phone: +
+                        <span id="phone">
+                            @user.Phone
+                        </span>
+                    </span>
+
+                    <form id="phoneform" class="form hidden">
+                        <input id="phoneinput" name="phone" type="text">
+                        <input class="editbutton" type="submit" value="Save">
+                    </form>
+
+                    <button id="editphone" class="editbutton">Edit</button>
+                </div>
+
+                <div>
+                    <span id="emailspan">
+                        Email:
+                        <span id="email">
+                            @user.Email
+                        </span>
+                    </span>
+
+                    <form id="emailform" class="form hidden">
+                        <input id="emailinput" name="email" type="text">
+                        <input class="editbutton" type="submit" value="Save">
+                    </form>
+
+                    <button id="editemail" class="editbutton">Edit</button>
+                </div>
+
+                <div>
+                    <span id="passwordspan">
+                        Edit password:
+                    </span>
+
+                    <form id="passwordform" class="form password hidden">
+                        <label for="oldpass">Current password</label>
+                        <input id="oldpass" name="oldpass" type="text">
+                        <label for="newpass">New password</label>
+                        <input id="newpass" name="newpass" type="text">
+                        <input class="editbutton" type="submit" value="Save">
+                    </form>
+
+                    <button id="editpassword" class="editbutton">Edit</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <span class="footertext">
+            Copyright© All rights reserved
+        </span>
+    </footer>
+
+    <script src="../default.js"></script>
+    <script src="../razorPersonal/main.js"></script>
+</body>
+
+</html>

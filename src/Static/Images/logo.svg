@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_Слой_2" data-name="Слой 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 324.9 128.64">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #ebebea;
+      }
+
+      .cls-2 {
+        fill: #f9b233;
+      }
+
+      .cls-3 {
+        fill: #ebebeb;
+      }
+
+      .cls-4 {
+        font-family: Calibri, Calibri;
+        font-size: 114px;
+      }
+
+      .cls-5 {
+        fill: #ededed;
+      }
+    </style>
+  </defs>
+  <g id="_Лого" data-name="Лого">
+    <text class="cls-4" transform="translate(0 93.01)"><tspan class="cls-2" x="0" y="0">SEL</tspan><tspan class="cls-1" x="155.97" y="0">L</tspan><tspan class="cls-5" x="203.9" y="0">ER</tspan></text>
+    <rect class="cls-3" x="3.99" y="100.31" width="313.2" height="7.59"/>
+    <rect class="cls-1" x="117.59" y="5.97" width="9.59" height="9.59" rx="2.03" ry="2.03" transform="translate(20.69 79.71) rotate(-39.16)"/>
+    <rect class="cls-2" x="165.55" y="5.97" width="9.59" height="9.59" rx="2.01" ry="2.01" transform="translate(17.44 86.61) rotate(-30)"/>
+  </g>
+</svg>

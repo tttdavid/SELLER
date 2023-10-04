@@ -1,0 +1,116 @@
+@model UserView
+
+@{
+    UserView user;
+    if (Model is not null)
+        user = Model;
+    else
+    {
+        user = new UserView
+                {
+                    Id = 1,
+                    Username = "undefined",
+                    Email = "undefined",
+                    Phone = "undefined",
+                    Avatar = "../Images/Users/default.png"
+                };
+    }
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href='https://fonts.googleapis.com/css?family=Varela Round' rel='stylesheet'>
+    <link rel="stylesheet" href="../default.css">
+    <link rel="stylesheet" href="../razorUserProducts/main.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="title">
+            <a href="/">
+                <img src="../Images/logo.svg" alt="logo" style="width: 130px;">
+            </a>
+        </div>
+
+        <div class="headercontent">
+
+            <div class="navigation" data-navigation>
+                <a href="/addproduct">
+                    <button class="nav-button">
+                        <span class="buttontext">
+                            Add product
+                        </span>
+                    </button>
+                </a>
+            </div>
+
+        </div>
+    </header>
+
+    <div class="container">
+
+        <div class="user">
+            <div id="author" class="author">
+
+                <p id="userId" class="hidden">
+                    @user.Id
+                </p>
+
+                <img src="../@user.Avatar" class="author-avatar" alt="author profile picture">
+
+                <span class="author-name">
+                    @user.Username
+                </span>
+                <span class="author-phone">
+                    Phone: +@user.Phone
+                </span>
+                <span class="author-email">
+                    Email: @user.Email
+                </span>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="products" id="products">
+                @* <div class="product" data-product="1">
+                    <div class="product-image-div">
+                        <img class="product-image" src="../Images/Products/default.png" alt="product-image">
+                    </div>
+                    <span class="product-title">Product 1</span>
+                    <span class="product-price">55$</span>
+                </div> *@
+            </div>
+            <div class="pagination" id="pagination">
+                @* <button class="pagination-button">
+                    1
+                </button>
+
+                <button class="pagination-button">
+                    2
+                </button>
+
+                <button class="pagination-button">
+                    3
+                </button> *@
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <span class="footertext">
+            Copyright© All rights reserved
+        </span>
+    </footer>
+
+    <script src="../default.js"></script>
+    <script src="../razorUserProducts/main.js"></script>
+</body>
+
+</html>

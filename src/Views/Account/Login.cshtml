@@ -1,0 +1,94 @@
+@model LoginUser
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href='https://fonts.googleapis.com/css?family=Varela Round' rel='stylesheet'>
+    <link rel="stylesheet" href="../default.css">
+    <link rel="stylesheet" href="../razorLogin/main.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="title">
+            <a href="/">
+                <img src="../Images/logo.svg" alt="logo" style="width: 130px;">
+            </a>
+        </div>
+
+        <div class="headercontent">
+
+            <div class="navigation" data-navigation>
+                <a href="/addproduct">
+                    <button class="nav-button">
+                        <span class="buttontext">
+                            Add product
+                        </span>
+                    </button>
+                </a>
+
+                <!-- <a href="/addproduct">
+                    <button class="nav-button">
+                        <span class="buttontext">
+                            Registartion
+                        </span>
+                    </button>
+                </a> -->
+            </div>
+
+        </div>
+    </header>
+
+    <div class="container">
+
+        <div class="content">
+            <form id="form">
+                <p>
+                    <label for="Username">Username:</label> <br>
+                    <input type="text" id="Username" name="Username" asp-for="Username" required><br>
+                    <span asp-validation-for="Username" />
+                </p>
+
+
+                <p>
+                    <label for="Password">Password:</label><br>
+                    <input type="password" id="Password" name="Password" asp-for="Password" required><br>
+                    <span asp-validation-for="Password" />
+                </p>
+
+                <input class="submit-button" type="submit" value="Log In">
+            </form>
+            <span>
+                Forgot password?
+                <a href="/reset">Reset</a>
+            </span>
+
+            <span>
+                Don't have account?
+                <a href="/registration">Register</a>
+            </span>
+        </div>
+
+    </div>
+
+    <footer>
+        <span class="footertext">
+            Copyright© All rights reserved
+        </span>
+    </footer>
+
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.1.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.17.0/jquery.validate.min.js"></script>
+    <script
+        src="https://ajax.aspnetcdn.com/ajax/jquery.validation.unobtrusive/3.2.10/jquery.validate.unobtrusive.min.js"></script>
+
+    <script src="../default.js"></script>
+    <script src="../razorLogin/main.js"></script>
+</body>
+
+</html>

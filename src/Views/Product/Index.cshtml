@@ -1,0 +1,143 @@
+@model ProductWithAuthor
+
+@{
+    Product product;
+    UserView user;
+    bool IsAuthor = Model.IsAuthor;
+    if (Model.Product is not null)
+        product = Model.Product;
+    else
+    {
+        product = new Product
+                {
+                    Id = 0,
+                    Title = "undefined",
+                    Description = "undefined",
+                    Type = "undefined",
+                    Price = 0,
+                    Image = "../Images/Products/default.png",
+                    AuthorId = 0
+                };
+    }
+    if (Model.User is not null)
+        user = Model.User;
+    else
+    {
+        user = new UserView
+                {
+                    Id = 1,
+                    Username = "undefined",
+                    Email = "undefined",
+                    Phone = "undefined",
+                    Avatar = "../Images/Users/default.png"
+                };
+    }
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href='https://fonts.googleapis.com/css?family=Varela Round' rel='stylesheet'>
+    <link rel="stylesheet" href="../default.css">
+    <link rel="stylesheet" href="../razorProduct/main.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="title">
+            <a href="/">
+                <img src="../Images/logo.svg" alt="logo" style="width: 130px;">
+            </a>
+        </div>
+
+        <div class="headercontent">
+
+            <div class="navigation" data-navigation>
+                <a href="/addproduct">
+                    <button class="nav-button">
+                        <span class="buttontext">
+                            Add product
+                        </span>
+                    </button>
+                </a>
+            </div>
+
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="content">
+            <div id="img" class="img">
+                <img id="product-image" class="product-image" src="../@product.Image" alt="product image">
+            </div>
+
+            <div id="imageModal" class="modal">
+                <span id="close" class="close">&times;</span>
+                <img class="modal-content" id="fullImage">
+            </div>
+
+            <div class="info">
+                <div class="info-wrapper">
+
+                    <span id="productId" class="hidden">@product.Id</span>
+
+                    <span class="product-title">
+                        @product.Title
+                    </span>
+
+                    <span class="product-type">
+                        Type: @product.Type
+                    </span>
+
+                    <span class="product-price">
+                        Price: @product.Price$
+                    </span>
+
+                    <span class="product-description">
+                        Description: @product.Description
+                    </span>
+                </div>
+
+                @if (IsAuthor)
+                {
+                    <button id="delete" class="delete-button">Delete this product</button>
+                }
+            </div>
+            <div id="author" class="author">
+
+                <p id="userId" class="hidden">
+                    @user.Id
+                </p>
+
+                <img src="../@user.Avatar" class="author-avatar" alt="author profile picture">
+
+                <span class="author-name">
+                    @user.Username
+                </span>
+                <span class="author-phone">
+                    Phone: +@user.Phone
+                </span>
+                <span class="author-email">
+                    Email: @user.Email
+                </span>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <span class="footertext">
+            Copyright© All rights reserved
+        </span>
+    </footer>
+
+    <script src="../default.js"></script>
+    <script src="../razorProduct/main.js"></script>
+</body>
+
+</html>
